@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Narrativas potentes do Centro-Oeste para o mundo.">
+  <link rel="preload" as="image" href="assets/poster-araguaia.jpg">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Portfólio — Araraguaia</title>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container row">
+      <a href="index.html"><img src="assets/logo-araguaia.png" class="logo" alt="Araraguaia Produções" /></a>
+      <nav class="nav">
+        <a href="index.html#edital-cultural">Edital Cultural</a>
+        <a href="portfolio.html">Portfólio</a>
+        <a href="https://wa.me/5566996849055?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20Araraguaia%20Produ%C3%A7%C3%B5es." target="_blank">WhatsApp</a>
+        <a href="https://instagram.com/araraguaia" target="_blank">Instagram</a>
+      </nav>
+    </div>
+  </header>
+
+<main class="container block">
+  <h1>Portfólio</h1>
+  <p class="muted">Seleção de obras e projetos realizados pela Araraguaia Produções.</p>
+  <div id="portfolio-grid" class="cards"></div>
+  <p class="muted small">Fontes citadas em cada item (links externos).</p>
+</main>
+
+  <footer class="footer">
+    <div class="container row space">
+      <small>© <span id="ano"></span> Araraguaia Produções</small>
+      <small><a href="mailto:araraguaiaproducoes@gmail.com">araraguaiaproducoes@gmail.com</a></small>
+    </div>
+  </footer>
+
+<script>
+async function renderPortfolio() {
+  const box = document.getElementById('portfolio-grid');
+  try {
+    const res = await fetch('data/portfolio.json', {cache:'no-store'});
+    const arr = await res.json();
+    if (!arr.length) { box.innerHTML = '<p class="muted">Nenhum item de portfólio por enquanto.</p>'; return; }
+    box.innerHTML = arr.map(p => `
+      <article class="card">
+        <header class="row space">
+          <div>
+            <h3 style="margin:0 0 4px">${p.titulo}</h3>
+            <span class="badge">${p.tipo || 'Projeto'} · ${p.ano || ''}</span>
+          </div>
+        </header>
+        ${p.capa ? `<img src="${p.capa}" alt="" style="width:100%;border-radius:10px;border:1px solid var(--border);margin-top:8px">` : ''}
+        <p style="margin:8px 0 0">${p.descricao || ''}</p>
+        ${
+          p.locacoes ? `<p class="muted small" style="margin:6px 0 0"><strong>Locações:</strong> ${p.locacoes}</p>` : ''
+        }
+        ${
+          (p.links||[]).length ? `<ul class="list" style="margin-top:8px">` + p.links.map(l => `<li><a href="${l.url}" target="_blank" rel="noopener">${l.titulo||l.url}</a></li>`).join('') + `</ul>` : ''
+        }
+      </article>
+    `).join('');
+  } catch (e) {
+    box.innerHTML = '<p class="muted">Falha ao carregar o portfólio.</p>';
+  }
+}
+renderPortfolio();
+</script>
+</body>
+</html>

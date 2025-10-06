@@ -19,9 +19,7 @@
       <a href="index.html"><img src="assets/logo-araguaia.png" class="logo" alt="Araraguaia Produções" /></a>
       <nav class="nav">
         <a href="index.html#edital-cultural">Edital Cultural</a>
-        <a href="noticias.html">Notícias</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="index.html#inscricao">Inscrição</a>
+        <a href="portfolio.html">Portfólio</a>
         <a href="https://wa.me/5566996849055?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20Araraguaia%20Produ%C3%A7%C3%B5es." target="_blank">WhatsApp</a>
         <a href="https://instagram.com/araraguaia" target="_blank">Instagram</a>
       </nav>
@@ -35,7 +33,7 @@
       <h1>Araraguaia Produções</h1>
       <p>Narrativas potentes do Centro-Oeste para o mundo.</p>
       <div class="hero-actions">
-        <a class="btn primary" href="https://wa.me/5566996849055?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20Araraguaia%20Produ%C3%A7%C3%B5es." target="_blank">Falar no WhatsApp</a>
+        <a class="btn primary" href="portfolio.html">Ver Portfólio</a>
         <a class="btn ghost" href="https://instagram.com/araraguaia" target="_blank">Instagram</a>
       </div>
     </div>
@@ -43,144 +41,20 @@
 
   <main class="container">
     <section id="edital-cultural" class="block">
-      <h2>Edital Cultural 2025</h2>
-      <p class="muted">Esta chamada apoia projetos culturais de várias linguagens com foco em narrativas do Centro-Oeste.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Objetivo</h3>
-          <p>Selecionar e fomentar iniciativas culturais que valorizem territórios, memórias e identidades do Centro-Oeste.</p>
-        </article>
-        <article class="card">
-          <h3>Público-alvo</h3>
-          <p>Artistas, coletivos e produtores culturais (pessoa física ou jurídica).</p>
-        </article>
-        <article class="card">
-          <h3>Cronograma</h3>
-          <ul class="list">
-            <li>Inscrições: 01/11/2025 a 20/12/2025</li>
-            <li>Habilitação: até 10/01/2026</li>
-            <li>Resultado: 31/01/2026</li>
-          </ul>
-        </article>
-      </div>
-      <div class="row gap">
-        <a class="btn primary" href="assets/edital-cultural.pdf" target="_blank">Baixar Edital (PDF)</a>
-        <a class="btn" href="#form-edital-cultural">Inscreva-se</a>
-      </div>
-
-      <form id="form-edital-cultural" class="form mt" enctype="multipart/form-data">
-        <h3>Inscrição — Edital Cultural 2025</h3>
-        <input type="hidden" name="edital" value="Edital Cultural 2025">
-        <div class="grid-2">
-          <label>Nome completo
-            <input name="nome" required>
-          </label>
-          <label>E-mail
-            <input type="email" name="email" required>
-          </label>
-        </div>
-        <div class="grid-2">
-          <label>Telefone (WhatsApp)
-            <input name="telefone" required>
-          </label>
-          <label>Link de portfólio/projeto (opcional)
-            <input name="portfolio" placeholder="https://...">
-          </label>
-        </div>
-        <label>PDF (obrigatório)
-          <input type="file" name="arquivo" accept="application/pdf" required>
-        </label>
-        <label class="consent">
-          <input type="checkbox" name="lgpd" value="sim" required> Li e concordo com a <a href="privacidade.html" target="_blank">Política de Privacidade</a>.
-        </label>
-        <button class="btn primary" type="submit">Enviar inscrição</button>
-        <p id="msgCultural" class="success" hidden>Inscrição enviada com sucesso</p>
-        <p id="errCultural" class="error" hidden>Falha ao enviar. Tente novamente.</p>
-      </form>
-    </section>
-
-    <section id="noticias-home" class="block">
-      <h2>Notícias</h2>
-      <div id="lista-noticias" class="cards"></div>
-      <p class="muted small">Veja todas em <a href="noticias.html">Notícias</a>.</p>
-    </section>
-
-    <section id="inscricao" class="block">
-      <h2>Inscrição geral</h2>
-      <form id="inscricaoForm" class="form" enctype="multipart/form-data">
-        <input type="hidden" name="edital" value="Inscrição Geral">
-        <div class="grid-2">
-          <label>Nome completo
-            <input name="nome" required>
-          </label>
-          <label>E-mail
-            <input type="email" name="email" required>
-          </label>
-        </div>
-        <div class="grid-2">
-          <label>Telefone (WhatsApp)
-            <input name="telefone" required>
-          </label>
-          <label>Título do edital
-            <input name="edital_titulo" placeholder="Ex.: Edital Cultural 2025">
-          </label>
-        </div>
-        <label>Link de portfólio/projeto (opcional)
-          <input name="portfolio" placeholder="https://...">
-        </label>
-        <label>PDF (obrigatório)
-          <input type="file" name="arquivo" accept="application/pdf" required>
-        </label>
-        <label class="consent">
-          <input type="checkbox" name="lgpd" value="sim" required> Li e concordo com a <a href="privacidade.html" target="_blank">Política de Privacidade</a>.
-        </label>
-        <button class="btn primary" type="submit">Enviar inscrição</button>
-        <p id="msg" class="success" hidden>Inscrição enviada com sucesso</p>
-        <p id="err" class="error" hidden>Falha ao enviar. Tente novamente.</p>
-      </form>
+      <h2>Edital Cultural</h2>
+      <p class="muted">Acompanhe nossas chamadas públicas e resultados aqui no site.</p>
+      <div id="lista-chamadas" class="cards"></div>
+      <p class="muted small">* Os dados vêm de <code>data/editais.json</code>.</p>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container row space">
       <small>© <span id="ano"></span> Araraguaia Produções</small>
-      <small>
-        <a href="mailto:araraguaiaproducoes@gmail.com">araraguaiaproducoes@gmail.com</a> ·
-        <a href="privacidade.html">Privacidade</a>
-      </small>
+      <small><a href="mailto:araraguaiaproducoes@gmail.com">araraguaiaproducoes@gmail.com</a></small>
     </div>
   </footer>
 
-  <!-- Admin Chat (abre com ?admin=1) -->
-  <div id="chat-admin" class="chat" hidden>
-    <div class="chat-header">
-      <strong>Assistente Araraguaia (Admin)</strong>
-      <button id="closeChat" class="btn ghost" style="padding:6px 10px">Fechar</button>
-    </div>
-    <div class="chat-body">
-      <label class="small muted">Tipo</label>
-      <select id="chatIntent" class="input">
-        <option value="criar_edital">Criar Edital</option>
-        <option value="criar_noticia">Criar Notícia</option>
-        <option value="criar_sobre">Criar Página "Sobre"</option>
-      </select>
-      <textarea id="chatPrompt" class="input" placeholder='Ex.: "Edital de música, R$ 80 mil, inscrições 05/11 a 10/12" OU "Notícia: seleção concluída; 12 projetos" OU "Sobre: manifesto da produtora"'></textarea>
-      <div class="row gap">
-        <button id="btnCriar" class="btn primary">Gerar</button>
-        <button id="btnPerguntar" class="btn">Perguntar</button>
-      </div>
-      <pre id="chatOut" class="pre"></pre>
-      <div id="previewArea"></div>
-      <div id="publishArea" class="row gap" style="display:none">
-        <input id="pubPath" class="input" style="flex:1" placeholder="Caminho para publicar (ex.: data/editais.json)">
-        <input id="pubMsg" class="input" style="flex:1" placeholder="Mensagem do commit (ex.: atualizar edital)">
-        <button id="btnPublish" class="btn primary">Publicar no GitHub</button>
-      </div>
-      <a id="downloadFile" class="btn" download style="display:none">Baixar arquivo</a>
-    </div>
-  </div>
-  <button id="openChat" class="chat-fab" hidden>✦</button>
-  <script src="script.js"></script>
-  <script src="chat.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
