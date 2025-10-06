@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Araraguaia Produções</title>
+  <meta name="description" content="Narrativas potentes do Centro-Oeste para o mundo.">
+  <link rel="preload" as="image" href="assets/poster-araguaia.jpg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container row">
+      <img src="assets/logo-araguaia.png" class="logo" alt="Araraguaia Produções" />
+      <nav class="nav">
+        <a href="#edital-cultural">Edital Cultural</a>
+        <a href="#chamadas">Chamadas</a>
+        <a href="#inscricao">Inscrição</a>
+        <a href="https://wa.me/5566996849055?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20Araraguaia%20Produ%C3%A7%C3%B5es." target="_blank">WhatsApp</a>
+        <a href="https://instagram.com/araraguaia" target="_blank">Instagram</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline poster="assets/poster-araguaia.jpg" src="assets/intro-araguaia.mp4"></video>
+    <div class="hero-overlay"></div>
+    <div class="hero-center">
+      <h1>Araraguaia Produções</h1>
+      <p>Narrativas potentes do Centro-Oeste para o mundo.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="https://wa.me/5566996849055?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20Araraguaia%20Produ%C3%A7%C3%B5es." target="_blank">Falar no WhatsApp</a>
+        <a class="btn ghost" href="https://instagram.com/araraguaia" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="edital-cultural" class="block">
+      <h2>Edital Cultural 2025</h2>
+      <p class="muted">Esta chamada apoia projetos culturais de várias linguagens com foco em narrativas do Centro-Oeste.</p>
+      <div class="cards">
+        <article class="card">
+          <h3>Objetivo</h3>
+          <p>Selecionar e fomentar iniciativas culturais que valorizem territórios, memórias e identidades do Centro-Oeste.</p>
+        </article>
+        <article class="card">
+          <h3>Público-alvo</h3>
+          <p>Artistas, coletivos e produtores culturais (pessoa física ou jurídica).</p>
+        </article>
+        <article class="card">
+          <h3>Cronograma</h3>
+          <ul class="list">
+            <li>Inscrições: 01/11/2025 a 20/12/2025</li>
+            <li>Habilitação: até 10/01/2026</li>
+            <li>Resultado: 31/01/2026</li>
+          </ul>
+        </article>
+      </div>
+      <div class="row gap">
+        <a class="btn primary" href="assets/edital-cultural.pdf" target="_blank">Baixar Edital (PDF)</a>
+        <a class="btn" href="#form-edital-cultural">Inscreva-se</a>
+      </div>
+
+      <form id="form-edital-cultural" class="form mt" enctype="multipart/form-data">
+        <h3>Inscrição — Edital Cultural 2025</h3>
+        <input type="hidden" name="edital" value="Edital Cultural 2025">
+        <div class="grid-2">
+          <label>Nome completo
+            <input name="nome" required>
+          </label>
+          <label>E-mail
+            <input type="email" name="email" required>
+          </label>
+        </div>
+        <div class="grid-2">
+          <label>Telefone (WhatsApp)
+            <input name="telefone" required>
+          </label>
+          <label>Link de portfólio/projeto (opcional)
+            <input name="portfolio" placeholder="https://...">
+          </label>
+        </div>
+        <label>PDF (obrigatório)
+          <input type="file" name="arquivo" accept="application/pdf" required>
+        </label>
+        <button class="btn primary" type="submit">Enviar inscrição</button>
+        <p id="msgCultural" class="success" hidden>Inscrição enviada com sucesso</p>
+        <p id="errCultural" class="error" hidden>Falha ao enviar. Tente novamente.</p>
+      </form>
+    </section>
+
+    <section id="chamadas" class="block">
+      <h2>Chamadas abertas</h2>
+      <input id="busca" class="input" placeholder="Buscar por título, linha ou objetivo">
+      <div id="lista-chamadas" class="cards"></div>
+      <p class="muted small">* Os dados acima vêm de <code>data/editais.json</code>. Edite esse arquivo para atualizar as chamadas.</p>
+    </section>
+
+    <section id="inscricao" class="block">
+      <h2>Inscrição geral</h2>
+      <form id="inscricaoForm" class="form" enctype="multipart/form-data">
+        <input type="hidden" name="edital" value="Inscrição Geral">
+        <div class="grid-2">
+          <label>Nome completo
+            <input name="nome" required>
+          </label>
+          <label>E-mail
+            <input type="email" name="email" required>
+          </label>
+        </div>
+        <div class="grid-2">
+          <label>Telefone (WhatsApp)
+            <input name="telefone" required>
+          </label>
+          <label>Título do edital
+            <input name="edital_titulo" placeholder="Ex.: Edital Cultural 2025">
+          </label>
+        </div>
+        <label>Link de portfólio/projeto (opcional)
+          <input name="portfolio" placeholder="https://...">
+        </label>
+        <label>PDF (obrigatório)
+          <input type="file" name="arquivo" accept="application/pdf" required>
+        </label>
+        <button class="btn primary" type="submit">Enviar inscrição</button>
+        <p id="msg" class="success" hidden>Inscrição enviada com sucesso</p>
+        <p id="err" class="error" hidden>Falha ao enviar. Tente novamente.</p>
+      </form>
+      <p class="muted small">
+        As inscrições são enviadas de forma segura e gratuita via Formspree.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container row space">
+      <small>© <span id="ano"></span> Araraguaia Produções</small>
+      <small><a href="mailto:araraguaiaproducoes@gmail.com">araraguaiaproducoes@gmail.com</a></small>
+    </div>
+  </footer>
+
+  <script>document.getElementById('ano').textContent = new Date().getFullYear();</script>
+  <script src="script.js"></script>
+</body>
+</html>
